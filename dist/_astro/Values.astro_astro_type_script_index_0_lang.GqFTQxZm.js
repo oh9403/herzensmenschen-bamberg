@@ -1,1 +1,0 @@
-import{g as r}from"./index.CB87Sc6I.js";import{S as e}from"./ScrollTrigger.Cv03IO65.js";r.registerPlugin(e);const o=window.matchMedia("(prefers-reduced-motion: reduce)").matches;o||r.fromTo(".value-card",{y:40,opacity:0},{y:0,opacity:1,duration:.7,ease:"power3.out",stagger:.15,scrollTrigger:{trigger:"#values-grid",start:"top 80%",once:!0}});

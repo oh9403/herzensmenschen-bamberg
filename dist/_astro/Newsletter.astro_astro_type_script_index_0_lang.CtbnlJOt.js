@@ -1,1 +1,0 @@
-import{g as e}from"./index.CB87Sc6I.js";import{S as r}from"./ScrollTrigger.Cv03IO65.js";e.registerPlugin(r);const t=window.matchMedia("(prefers-reduced-motion: reduce)").matches;t||e.fromTo("#newsletter-content",{y:30,opacity:0},{y:0,opacity:1,duration:.8,ease:"power3.out",scrollTrigger:{trigger:"#newsletter-content",start:"top 80%",once:!0}});

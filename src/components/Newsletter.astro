@@ -1,0 +1,113 @@
+---
+---
+
+<section
+  class="relative py-24 lg:py-32 overflow-hidden"
+  style="background: var(--cream);"
+  aria-labelledby="newsletter-heading"
+>
+  <!-- Subtle background decoration -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse 60% 50% at 50% 50%, var(--cream-deep), transparent); opacity: 0.8;"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center" id="newsletter-content">
+
+    <!-- Icon -->
+    <div class="flex justify-center mb-6" aria-hidden="true">
+      <div
+        class="w-14 h-14 rounded-full flex items-center justify-center"
+        style="background: var(--cream-deep); border: 2px solid var(--warm-gold); border-opacity: 0.3;"
+      >
+        <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6" aria-hidden="true" style="color: var(--warm-gold);">
+          <path d="M3 5h18v14H3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M3 5 L12 13 L21 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Heading -->
+    <h2
+      id="newsletter-heading"
+      class="font-serif text-3xl lg:text-4xl mb-4 leading-tight"
+      style="color: var(--text-primary); letter-spacing: -0.01em;"
+    >
+      Bleib auf dem Laufenden
+    </h2>
+
+    <!-- Text -->
+    <p
+      class="font-sans text-base lg:text-lg leading-relaxed mb-10"
+      style="color: var(--text-secondary);"
+    >
+      Erfahre als Erste:r von Veranstaltungen, Angeboten und Neuigkeiten rund um die
+      Herzensmenschen.
+    </p>
+
+    <!-- Buttondown Form -->
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/herzensmenschen"
+      method="post"
+      target="_blank"
+      class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+      aria-label="Newsletter anmelden"
+    >
+      <label for="newsletter-email" class="sr-only">Deine E-Mail-Adresse</label>
+      <input
+        id="newsletter-email"
+        type="email"
+        name="email"
+        placeholder="Deine E-Mail-Adresse"
+        required
+        class="flex-1 px-5 py-3.5 rounded-[var(--radius-sm)] font-sans text-sm outline-none transition-all duration-200"
+        style="background: var(--cream-dark); border: 1.5px solid var(--cream-dark); color: var(--text-primary);"
+        onfocus="this.style.borderColor='var(--terracotta)'; this.style.boxShadow='0 0 0 3px rgba(193,104,58,0.12)'"
+        onblur="this.style.borderColor='var(--cream-dark)'; this.style.boxShadow='none'"
+      />
+      <button
+        type="submit"
+        class="btn-primary whitespace-nowrap"
+        style="padding: 0.875rem 1.5rem;"
+      >
+        Anmelden
+      </button>
+    </form>
+
+    <!-- Privacy note -->
+    <p
+      class="mt-5 font-sans text-xs"
+      style="color: var(--text-muted);"
+    >
+      Kein Spam. Jederzeit abmeldbar. Deine Daten werden vertraulich behandelt.
+    </p>
+
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    gsap.fromTo(
+      '#newsletter-content',
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#newsletter-content',
+          start: 'top 80%',
+          once: true,
+        },
+      }
+    );
+  }
+</script>

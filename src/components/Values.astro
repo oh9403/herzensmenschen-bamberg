@@ -1,0 +1,191 @@
+---
+const values = [
+  {
+    title: 'Offenes Ohr',
+    description:
+      'Ein Ort, an dem man sich Sorgen, Ängste und Probleme von der Seele reden kann – ganz ohne schlechtes Gewissen. Zuhören auf Augenhöhe.',
+    icon: 'ear',
+  },
+  {
+    title: 'Miteinander auf Augenhöhe',
+    description:
+      'Hier ist es ausdrücklich erwünscht, sich an besetzte Tische dazuzusetzen. Begegnungen entstehen, Einsamkeit löst sich auf.',
+    icon: 'people',
+  },
+  {
+    title: 'Wissen weitergeben',
+    description:
+      'Menschen geben weiter, was sie gut können – ob Yoga, Malen, Stricken oder praktische Lebenstipps. Jeder Mensch hat etwas zu geben.',
+    icon: 'lightbulb',
+  },
+  {
+    title: 'Brücke zu Hilfsangeboten',
+    description:
+      'Orientierung und Beratung vor der eigentlichen Beratung. Wir kennen die richtigen Anlaufstellen und helfen beim ersten Schritt – ob Sozialamt, Arbeitsamt, Frauenhaus oder Ärzte.',
+    icon: 'signpost',
+  },
+  {
+    title: 'Selbstermächtigung',
+    description:
+      'Stärkung von Eigenständigkeit und Selbstvertrauen. Ressourcen aktivieren, neue Wege entdecken und ins eigene Leben zurückfinden – gemeinsam.',
+    icon: 'plant',
+  },
+  {
+    title: 'Offen für Alle',
+    description:
+      'Frauen, Männer und alle Menschen – unabhängig von Alter, Geschlecht, Herkunft oder Lebenssituation. Jeder Mensch ist hier willkommen.',
+    icon: 'door',
+  },
+];
+---
+
+<section
+  id="values"
+  class="relative py-24 lg:py-32 overflow-hidden"
+  style="background: linear-gradient(180deg, var(--cream-deep) 0%, var(--cream) 100%);"
+  aria-labelledby="values-heading"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="section-label mb-4 block">Was uns ausmacht</span>
+      <h2
+        id="values-heading"
+        class="font-serif text-4xl lg:text-5xl leading-tight"
+        style="color: var(--text-primary); letter-spacing: -0.01em;"
+      >
+        Unsere sechs Herzstücke
+      </h2>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" id="values-grid">
+
+      {values.map((value, i) => (
+        <div
+          class="value-card relative bg-white rounded-[var(--radius-md)] p-8 overflow-hidden group cursor-default"
+          style="box-shadow: var(--shadow-sm); transition: transform 0.25s ease, box-shadow 0.25s ease;"
+        >
+          <!-- Top gold accent line -->
+          <div
+            class="value-top-line absolute top-0 left-0 right-0 h-0.5 origin-left"
+            style="background: linear-gradient(90deg, var(--warm-gold), var(--warm-gold-light)); transform: scaleX(0); transition: transform 0.3s ease;"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Icon -->
+          <div class="mb-5 flex items-center justify-start" aria-hidden="true">
+            {value.icon === 'ear' && (
+              <svg viewBox="0 0 48 48" fill="none" class="w-12 h-12" aria-hidden="true">
+                <path d="M24 8 C14 8 8 16 8 24 C8 34 16 40 20 40 C20 40 20 36 24 36 C28 36 30 32 28 28 C26 26 22 26 22 22 C22 16 28 14 32 18 C36 22 34 30 30 34" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 40 C20 40 18 44 22 44 C25 44 26 40 24 36" stroke="var(--terracotta)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            )}
+            {value.icon === 'people' && (
+              <svg viewBox="0 0 48 48" fill="none" class="w-12 h-12" aria-hidden="true">
+                <circle cx="16" cy="14" r="5" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="32" cy="14" r="5" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M6 38 C6 30 10 25 16 25 C22 25 26 30 26 38" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 38 C22 30 26 25 32 25 C38 25 42 30 42 38" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            )}
+            {value.icon === 'lightbulb' && (
+              <svg viewBox="0 0 48 48" fill="none" class="w-12 h-12" aria-hidden="true">
+                <path d="M24 8 C16 8 10 14 10 22 C10 28 14 32 16 36 L32 36 C34 32 38 28 38 22 C38 14 32 8 24 8 Z" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 36 L31 36 L31 40 Q31 44 24 44 Q17 44 17 40 Z" stroke="var(--terracotta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 28 C24 28 20 24 20 20" stroke="var(--warm-gold)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 28 L24 22" stroke="var(--warm-gold)" stroke-width="2" stroke-linecap="round"/>
+                <!-- Heart inside bulb -->
+                <path d="M24 17 C24 14.5 21 13 21 15.5 C21 17 24 19.5 24 19.5 C24 19.5 27 17 27 15.5 C27 13 24 14.5 24 17 Z" stroke="var(--warm-gold)" stroke-width="1.5" fill="var(--warm-gold)" fill-opacity="0.3"/>
+              </svg>
+            )}
+            {value.icon === 'signpost' && (
+              <svg viewBox="0 0 48 48" fill="none" class="w-12 h-12" aria-hidden="true">
+                <line x1="24" y1="6" x2="24" y2="42" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M24 12 L36 12 L40 17 L36 22 L24 22 Z" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 26 L12 26 L8 31 L12 36 L24 36 Z" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            )}
+            {value.icon === 'plant' && (
+              <svg viewBox="0 0 48 48" fill="none" class="w-12 h-12" aria-hidden="true">
+                <path d="M24 40 L24 20" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M24 26 Q20 22 16 24 Q12 26 14 30 Q18 34 24 30" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 32 Q28 28 32 30 Q36 32 34 36 Q30 40 24 36" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 20 Q22 14 24 10 Q26 6 28 10 Q30 14 26 18" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 40 Q24 38 30 40" stroke="var(--soft-brown)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+              </svg>
+            )}
+            {value.icon === 'door' && (
+              <svg viewBox="0 0 48 48" fill="none" class="w-12 h-12" aria-hidden="true">
+                <rect x="12" y="6" width="24" height="36" rx="3" stroke="var(--terracotta)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 6 L20 42" stroke="var(--terracotta)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <circle cx="29" cy="24" r="1.5" fill="var(--warm-gold)" stroke="var(--warm-gold)" stroke-width="1"/>
+                <!-- People silhouettes outside door -->
+                <circle cx="5" cy="20" r="2.5" stroke="var(--sage)" stroke-width="2"/>
+                <path d="M2 32 C2 27 3.5 25 5 25 C6.5 25 8 27 8 32" stroke="var(--sage)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="43" cy="18" r="2" stroke="var(--sage)" stroke-width="2"/>
+                <path d="M40 28 C40 24 41 22.5 43 22.5 C45 22.5 46 24 46 28" stroke="var(--sage)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            )}
+          </div>
+
+          <!-- Title -->
+          <h3
+            class="font-serif text-xl mb-3"
+            style="color: var(--text-primary);"
+          >
+            {value.title}
+          </h3>
+
+          <!-- Description -->
+          <p
+            class="font-sans text-sm leading-relaxed"
+            style="color: var(--text-secondary);"
+          >
+            {value.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  .value-card:hover .value-top-line {
+    transform: scaleX(1) !important;
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    gsap.fromTo(
+      '.value-card',
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: 'power3.out',
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: '#values-grid',
+          start: 'top 80%',
+          once: true,
+        },
+      }
+    );
+  }
+</script>

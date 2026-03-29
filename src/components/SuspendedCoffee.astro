@@ -1,0 +1,241 @@
+---
+---
+
+<div class="gold-divider" aria-hidden="true"></div>
+
+<section
+  class="relative py-24 lg:py-32 overflow-hidden"
+  style="background: var(--cream);"
+  aria-labelledby="suspended-coffee-heading"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Coffee Cup + Badge -->
+      <div class="flex flex-col items-center gap-8" id="suspended-left">
+        <!-- Floating coffee cup -->
+        <div id="floating-cup" class="relative">
+          <svg
+            viewBox="0 0 280 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-56 lg:w-72 mx-auto"
+            aria-hidden="true"
+          >
+            <!-- Decorative circle behind cup -->
+            <circle
+              cx="140"
+              cy="160"
+              r="110"
+              fill="var(--cream-deep)"
+              opacity="0.8"
+            />
+            <circle
+              cx="140"
+              cy="160"
+              r="100"
+              stroke="var(--warm-gold)"
+              stroke-width="1"
+              stroke-dasharray="8 6"
+              opacity="0.3"
+            />
+
+            <!-- Cup body -->
+            <path
+              d="M 80,155 Q 75,200 84,235 Q 112,262 140,262 Q 168,262 196,235 Q 206,200 200,155 Z"
+              stroke="var(--terracotta)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="var(--cream)"
+              fill-opacity="0.8"
+            />
+            <!-- Cup rim -->
+            <path
+              d="M 74,155 Q 140,142 206,155"
+              stroke="var(--terracotta)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <!-- Handle -->
+            <path
+              d="M 200,182 Q 236,175 234,210 Q 232,242 197,234"
+              stroke="var(--terracotta)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+            <!-- Saucer -->
+            <path
+              d="M 55,272 Q 90,284 140,286 Q 190,284 225,272"
+              stroke="var(--soft-brown)"
+              stroke-width="2"
+              stroke-linecap="round"
+              fill="none"
+              opacity="0.5"
+            />
+            <!-- Liquid surface in cup -->
+            <ellipse
+              cx="140"
+              cy="162"
+              rx="60"
+              ry="7"
+              fill="var(--warm-gold)"
+              fill-opacity="0.35"
+              stroke="var(--warm-gold)"
+              stroke-width="1"
+              opacity="0.8"
+            />
+            <!-- Steam -->
+            <path
+              d="M 110,145 Q 104,128 114,112 Q 124,96 114,78"
+              stroke="var(--terracotta-light)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              fill="none"
+              opacity="0.6"
+            />
+            <path
+              d="M 140,140 Q 134,118 144,100 Q 154,82 144,60"
+              stroke="var(--warm-gold)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              fill="none"
+              opacity="0.7"
+            />
+            <path
+              d="M 170,145 Q 164,128 174,112 Q 184,96 174,78"
+              stroke="var(--terracotta-light)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              fill="none"
+              opacity="0.6"
+            />
+
+            <!-- Heart on cup -->
+            <path
+              d="M 130,210 C 130,202 118,198 118,208 C 118,214 130,222 130,222 C 130,222 142,214 142,208 C 142,198 130,202 130,210 Z"
+              stroke="var(--warm-gold)"
+              stroke-width="1.5"
+              fill="var(--warm-gold)"
+              fill-opacity="0.3"
+            />
+
+            <!-- "2" inside cup text hint -->
+            <text x="155" y="220" font-family="'DM Serif Display', serif" font-size="20" fill="var(--terracotta)" opacity="0.5" text-anchor="middle">2</text>
+          </svg>
+        </div>
+
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full"
+          style="background: var(--terracotta); color: white;"
+        >
+          <span>♡</span>
+          <span class="font-serif text-sm">Kauf Dir einen, zahl zwei</span>
+        </div>
+      </div>
+
+      <!-- Right: Text Content -->
+      <div id="suspended-right">
+        <span class="section-label mb-4 block">Das Modell des aufgeschobenen Kaffees</span>
+        <h2
+          id="suspended-coffee-heading"
+          class="font-serif text-4xl lg:text-5xl leading-tight mb-6"
+          style="color: var(--text-primary); letter-spacing: -0.01em;"
+        >
+          Der aufgeschobene Kaffee
+        </h2>
+
+        <p
+          class="font-sans text-base lg:text-lg leading-relaxed mb-6"
+          style="color: var(--text-secondary);"
+        >
+          Nach dem Modell »Kauf Dir einen, zahl zwei« – damit auch Menschen, die sich keinen
+          Kaffee leisten können, bei uns willkommen sind und einen serviert bekommen. Weil
+          Wärme keine Frage des Geldbeutels sein sollte.
+        </p>
+
+        <div
+          class="flex items-start gap-4 p-5 rounded-[var(--radius-sm)]"
+          style="background: var(--cream-deep);"
+        >
+          <div
+            class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center mt-0.5"
+            style="background: var(--warm-gold); opacity: 0.8;"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" aria-hidden="true">
+              <path d="M12 21 C12 21 4 15 4 9 C4 6.2 6.2 4 9 4 C10.6 4 12 5 12 5 C12 5 13.4 4 15 4 C17.8 4 20 6.2 20 9 C20 15 12 21 12 21 Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <p
+            class="font-sans text-sm leading-relaxed"
+            style="color: var(--text-secondary);"
+          >
+            Ein einfaches Prinzip mit großer Wirkung: Wer möchte, bezahlt seinen Kaffee
+            doppelt. Der zweite wird für jemanden aufbewahrt, der ihn gerade nicht bezahlen
+            kann – diskret und ohne Aufhebens.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider" aria-hidden="true"></div>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    // Floating animation for the cup
+    gsap.to('#floating-cup', {
+      y: -8,
+      duration: 4,
+      yoyo: true,
+      repeat: -1,
+      ease: 'sine.inOut',
+    });
+
+    // Scroll entrance
+    gsap.fromTo(
+      '#suspended-left',
+      { x: -30, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#suspended-left',
+          start: 'top 80%',
+          once: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      '#suspended-right',
+      { x: 30, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#suspended-right',
+          start: 'top 80%',
+          once: true,
+        },
+      }
+    );
+  }
+</script>

@@ -1,0 +1,189 @@
+---
+---
+
+<footer
+  style="background: var(--deep-brown); color: var(--cream);"
+  aria-label="Seitenende"
+>
+  <!-- Gold divider -->
+  <div class="gold-divider" aria-hidden="true"></div>
+
+  <!-- Main footer content -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+
+      <!-- Column 1: Brand -->
+      <div class="lg:col-span-1">
+        <a
+          href="/"
+          class="font-serif text-xl mb-4 block hover:opacity-80 transition-opacity"
+          style="color: var(--cream);"
+        >
+          Herzensmenschen <span style="color: var(--warm-gold);">♡</span>
+        </a>
+        <p
+          class="font-sans text-sm leading-relaxed"
+          style="color: var(--cream-dark);"
+        >
+          Ein Sozialprojekt für Menschen aller Schichten in Bamberg. Getragen von Ehrenamt
+          und Herzenswärme.
+        </p>
+
+        <!-- Social Media icons (inline in brand col for small screens) -->
+        <div class="flex items-center gap-3 mt-6 lg:hidden">
+          <a
+            href="#"
+            aria-label="Instagram"
+            class="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+            style="background: rgba(255,255,255,0.08);"
+            onmouseover="this.style.background='rgba(255,255,255,0.15)'"
+            onmouseout="this.style.background='rgba(255,255,255,0.08)'"
+          >
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" aria-hidden="true" style="color: var(--cream);">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="Facebook"
+            class="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+            style="background: rgba(255,255,255,0.08);"
+            onmouseover="this.style.background='rgba(255,255,255,0.15)'"
+            onmouseout="this.style.background='rgba(255,255,255,0.08)'"
+          >
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" aria-hidden="true" style="color: var(--cream);">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <div>
+        <h3
+          class="font-sans font-medium text-sm uppercase tracking-wider mb-5"
+          style="color: var(--warm-gold); letter-spacing: 0.1em;"
+        >
+          Navigation
+        </h3>
+        <ul class="space-y-3" role="list">
+          {[
+            { label: 'Unsere Vision', href: '#vision' },
+            { label: 'Was uns ausmacht', href: '#values' },
+            { label: 'Angebote', href: '#angebote' },
+            { label: 'Über uns', href: '#gruenderin' },
+            { label: 'Kontakt', href: 'mailto:kontakt@herzensmenschen-bamberg.de' },
+          ].map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="font-sans text-sm transition-colors"
+                style="color: var(--cream-dark);"
+                onmouseover="this.style.color='var(--warm-gold-light)'"
+                onmouseout="this.style.color='var(--cream-dark)'"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Vernetzung (desktop) -->
+      <div class="hidden lg:block">
+        <h3
+          class="font-sans font-medium text-sm uppercase tracking-wider mb-5"
+          style="color: var(--warm-gold); letter-spacing: 0.1em;"
+        >
+          Vernetzung
+        </h3>
+        <div class="flex flex-col gap-3">
+          <a
+            href="#"
+            class="inline-flex items-center gap-3 font-sans text-sm transition-colors"
+            style="color: var(--cream-dark);"
+            onmouseover="this.style.color='var(--warm-gold-light)'"
+            onmouseout="this.style.color='var(--cream-dark)'"
+          >
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 flex-shrink-0" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+            Instagram
+          </a>
+          <a
+            href="#"
+            class="inline-flex items-center gap-3 font-sans text-sm transition-colors"
+            style="color: var(--cream-dark);"
+            onmouseover="this.style.color='var(--warm-gold-light)'"
+            onmouseout="this.style.color='var(--cream-dark)'"
+          >
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 flex-shrink-0" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 4: Rechtliches -->
+      <div>
+        <h3
+          class="font-sans font-medium text-sm uppercase tracking-wider mb-5"
+          style="color: var(--warm-gold); letter-spacing: 0.1em;"
+        >
+          Rechtliches
+        </h3>
+        <ul class="space-y-3" role="list">
+          <li>
+            <a
+              href="/impressum"
+              class="font-sans text-sm transition-colors"
+              style="color: var(--cream-dark);"
+              onmouseover="this.style.color='var(--warm-gold-light)'"
+              onmouseout="this.style.color='var(--cream-dark)'"
+            >
+              Impressum
+            </a>
+          </li>
+          <li>
+            <a
+              href="/datenschutz"
+              class="font-sans text-sm transition-colors"
+              style="color: var(--cream-dark);"
+              onmouseover="this.style.color='var(--warm-gold-light)'"
+              onmouseout="this.style.color='var(--cream-dark)'"
+            >
+              Datenschutz
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div
+    class="border-t mx-6 lg:mx-8"
+    style="border-color: rgba(255,255,255,0.08);"
+  >
+    <div class="max-w-7xl mx-auto py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p
+        class="font-sans text-xs text-center sm:text-left"
+        style="color: rgba(250,246,241,0.4);"
+      >
+        © 2026 Herzensmenschen Bamberg e.V. · Mit <span style="color: var(--warm-gold); opacity: 0.8;">♡</span> gemacht in Bamberg
+      </p>
+      <p
+        class="font-sans text-xs"
+        style="color: rgba(250,246,241,0.25);"
+      >
+        Gemeinnütziger Verein
+      </p>
+    </div>
+  </div>
+</footer>

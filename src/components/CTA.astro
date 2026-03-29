@@ -1,0 +1,151 @@
+---
+---
+
+<section
+  id="mitmachen"
+  class="relative py-28 lg:py-36 overflow-hidden"
+  style="background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-hover) 50%, #8B3A1A 100%);"
+  aria-labelledby="cta-heading"
+>
+  <!-- Warm light circles decoration -->
+  <div
+    class="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
+    style="background: rgba(255,255,255,0.06); transform: translateY(-50%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute bottom-0 right-1/4 w-80 h-80 rounded-full pointer-events-none"
+    style="background: rgba(255,255,255,0.04); transform: translateY(40%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute top-1/2 left-0 w-64 h-64 rounded-full pointer-events-none"
+    style="background: rgba(212,160,86,0.12); transform: translate(-30%, -50%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute top-1/2 right-0 w-48 h-48 rounded-full pointer-events-none"
+    style="background: rgba(212,160,86,0.08); transform: translate(30%, -50%);"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+
+    <!-- Heart icon -->
+    <div
+      id="cta-icon"
+      class="flex justify-center mb-8"
+      aria-hidden="true"
+    >
+      <div
+        class="w-16 h-16 rounded-full flex items-center justify-center"
+        style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);"
+      >
+        <span class="text-2xl" style="color: var(--warm-gold-light);">♡</span>
+      </div>
+    </div>
+
+    <!-- Heading -->
+    <h2
+      id="cta-heading"
+      class="font-serif text-4xl lg:text-5xl xl:text-6xl leading-tight mb-6"
+      style="color: var(--cream); letter-spacing: -0.01em;"
+    >
+      Werde Teil der Herzensmenschen
+    </h2>
+
+    <!-- Text -->
+    <p
+      id="cta-text"
+      class="font-sans text-base lg:text-lg leading-relaxed mb-12 mx-auto max-w-2xl"
+      style="color: rgba(250,246,241,0.85);"
+    >
+      Ob als Gast, als Ehrenamtliche:r oder als Unterstützer:in – jeder Mensch kann einen
+      Beitrag leisten. Lass uns Bamberg ein Stück wärmer machen.
+    </p>
+
+    <!-- Buttons -->
+    <div
+      id="cta-buttons"
+      class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+    >
+      <a
+        href="mailto:kontakt@herzensmenschen-bamberg.de"
+        class="btn-pulse inline-flex items-center gap-2 font-sans font-medium text-base px-8 py-4 rounded-[var(--radius-sm)] transition-all duration-200"
+        style="background: var(--cream); color: var(--terracotta); min-width: 200px; justify-content: center;"
+      >
+        <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4" aria-hidden="true">
+          <path d="M2 4h16v12H2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M2 4 L10 12 L18 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Kontakt aufnehmen
+      </a>
+
+      <a
+        href="https://www.betterplace.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 font-sans font-medium text-base px-8 py-4 rounded-[var(--radius-sm)] border-2 transition-all duration-200"
+        style="border-color: rgba(250,246,241,0.7); color: var(--cream); min-width: 200px; justify-content: center;"
+        onmouseover="this.style.background='rgba(250,246,241,0.1)'"
+        onmouseout="this.style.background='transparent'"
+      >
+        <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4" aria-hidden="true">
+          <path d="M10 18 C10 18 3 12 3 7 C3 4.2 6 2 10 5 C14 2 17 4.2 17 7 C17 12 10 18 10 18 Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Spenden
+      </a>
+    </div>
+
+    <!-- Subtext -->
+    <p
+      class="mt-10 font-sans text-sm"
+      style="color: rgba(250,246,241,0.55);"
+    >
+      Ehrenamt · Spenden · Mitgliedschaft · Kooperation
+    </p>
+
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#mitmachen',
+        start: 'top 75%',
+        once: true,
+      },
+    });
+
+    tl.fromTo(
+      '#cta-icon',
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }
+    )
+    .fromTo(
+      '#cta-heading',
+      { y: 25, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' },
+      '-=0.3'
+    )
+    .fromTo(
+      '#cta-text',
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' },
+      '-=0.4'
+    )
+    .fromTo(
+      '#cta-buttons',
+      { y: 15, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
+      '-=0.3'
+    );
+  }
+</script>

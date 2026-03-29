@@ -1,0 +1,193 @@
+---
+---
+
+<section
+  id="gruenderin"
+  class="relative py-24 lg:py-32 overflow-hidden"
+  style="background: linear-gradient(135deg, var(--cream-deep) 0%, var(--cream) 60%, var(--cream-deep) 100%);"
+  aria-labelledby="founder-heading"
+>
+  <!-- Decorative background element -->
+  <div
+    class="absolute top-0 right-0 w-96 h-96 pointer-events-none"
+    style="background: var(--warm-gold); opacity: 0.03; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"
+    aria-hidden="true"
+  ></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+
+      <!-- Left: Portrait + Info -->
+      <div id="founder-left" class="flex flex-col items-center lg:items-start">
+
+        <!-- Portrait Placeholder -->
+        <!-- Hier kann später ein echtes Foto eingefügt werden -->
+        <div
+          class="relative mb-8"
+        >
+          <div
+            class="w-56 h-56 lg:w-64 lg:h-64 rounded-[var(--radius-lg)] flex items-center justify-center relative overflow-hidden"
+            style="background: var(--cream-dark); box-shadow: var(--shadow-lg);"
+          >
+            <!-- Initials -->
+            <span
+              class="font-serif text-6xl lg:text-7xl font-bold select-none"
+              style="color: var(--warm-gold);"
+              aria-label="Initialen KT"
+            >
+              KT
+            </span>
+
+            <!-- Decorative inner ring -->
+            <div
+              class="absolute inset-4 rounded-[var(--radius-md)] border-2 pointer-events-none"
+              style="border-color: var(--warm-gold); opacity: 0.2;"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Corner heart accents -->
+            <div
+              class="absolute top-3 right-3 text-sm opacity-40"
+              style="color: var(--warm-gold);"
+              aria-hidden="true"
+            >♡</div>
+            <div
+              class="absolute bottom-3 left-3 text-xs opacity-30"
+              style="color: var(--terracotta);"
+              aria-hidden="true"
+            >♡</div>
+          </div>
+
+          <!-- Decorative dot accent -->
+          <div
+            class="absolute -bottom-3 -right-3 w-14 h-14 rounded-full pointer-events-none"
+            style="background: var(--warm-gold); opacity: 0.15;"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Name and Title -->
+        <div class="text-center lg:text-left">
+          <p
+            class="font-serif text-2xl font-bold mb-1"
+            style="color: var(--text-primary);"
+          >
+            Katja Trammer
+          </p>
+          <p
+            class="font-sans text-sm"
+            style="color: var(--text-muted);"
+          >
+            Systemischer Coach · Initiatorin des Kaffeeklatsch zum offenen Ohr
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Quote + Bio -->
+      <div id="founder-right">
+        <span class="section-label mb-6 block">Die Initiatorin</span>
+
+        <!-- Blockquote with animated border -->
+        <blockquote
+          class="relative mb-8 pl-6"
+          style="border-left: 3px solid var(--terracotta);"
+          id="founder-quote"
+        >
+          <p
+            class="font-serif text-xl lg:text-2xl leading-snug italic"
+            style="color: var(--text-primary);"
+          >
+            »Ich möchte einen Ort schaffen, an dem Gastlichkeit bedeutet, dass Sorgen
+            genauso willkommen sind wie gute Laune.«
+          </p>
+        </blockquote>
+
+        <!-- Bio -->
+        <p
+          id="founder-heading"
+          class="font-sans text-base lg:text-lg leading-relaxed"
+          style="color: var(--text-secondary);"
+        >
+          Seit mehreren Jahren ist es Katja ein Herzensanliegen, Menschen zu fördern,
+          zu unterstützen und sie beim Wachsen zu begleiten. Aus dieser Leidenschaft
+          entstanden erfolgreiche Formate wie der »Kaffeeklatsch zum offenen Ohr« –
+          monatlich seit bald drei Jahren – und »Selbstliebe to go«.
+        </p>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mt-8">
+          {['Systemischer Coach', 'Kaffeeklatsch seit 2022', 'Selbstliebe to go', 'Bamberg'].map((tag) => (
+            <span
+              class="font-sans text-xs px-3 py-1 rounded-full"
+              style="background: var(--cream-dark); color: var(--text-muted); border: 1px solid var(--cream-dark);"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    // Portrait from left
+    gsap.fromTo(
+      '#founder-left',
+      { x: -40, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#gruenderin',
+          start: 'top 75%',
+          once: true,
+        },
+      }
+    );
+
+    // Text from right
+    gsap.fromTo(
+      '#founder-right',
+      { x: 40, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#gruenderin',
+          start: 'top 75%',
+          once: true,
+        },
+      }
+    );
+
+    // Blockquote border scaleY 0 → 1
+    gsap.fromTo(
+      '#founder-quote',
+      { borderLeftColor: 'transparent', paddingLeft: '0px' },
+      {
+        borderLeftColor: 'var(--terracotta)',
+        paddingLeft: '24px',
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#founder-quote',
+          start: 'top 85%',
+          once: true,
+        },
+      }
+    );
+  }
+</script>

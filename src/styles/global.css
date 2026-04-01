@@ -129,6 +129,38 @@ body::before {
   opacity: 0.06;
 }
 
+/* Hero blob sizing & positioning */
+#hero-blob-1 {
+  width: 520px;
+  height: 480px;
+  top: -100px;
+  right: -120px;
+}
+
+#hero-blob-2 {
+  width: 380px;
+  height: 420px;
+  bottom: -80px;
+  left: -100px;
+  border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+}
+
+@media (max-width: 767px) {
+  #hero-blob-1 {
+    width: 300px;
+    height: 280px;
+    top: -60px;
+    right: -80px;
+  }
+
+  #hero-blob-2 {
+    width: 220px;
+    height: 250px;
+    bottom: -50px;
+    left: -60px;
+  }
+}
+
 /* ─── Prefers Reduced Motion ────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
